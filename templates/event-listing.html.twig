@@ -1,0 +1,15 @@
+
+{% if events %}
+  <div class="row"> 
+    {% for item in events %}
+        <div class="card col-3" style="width: 10rem;border:1px solid black;margin-top:2px">
+        <img class="card-img-top" src="{{ item.image }}" alt="{{ item.title }}">
+            <div class="card-body">
+               <a href="/events/show/{{item.id}}">
+                 <p class="card-text">{{ item.title }}</p>
+                </a>
+             </div>
+        </div>
+    {% endfor %}
+  </div>
+{% endif %}

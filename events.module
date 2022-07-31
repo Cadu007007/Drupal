@@ -1,0 +1,15 @@
+<?php
+/* 
+* Implements hook_theme
+*/
+function events_theme($existing,$type,$theme,$path)
+{
+    return [
+        'event-listing'=>[
+            'variables'=>['events'=>null]
+        ],
+        'event-item'=>[
+            'variables'=>['event'=>null]
+        ],
+    ];
+}

@@ -1,0 +1,20 @@
+events.another:
+  title: 'All Events'
+  description: 'Link To Event Create Page'
+  route_name: events.list
+  weight: 10
+  menu_name: main
+events.admin:
+  title: 'All Events'
+  description: 'Link To Event Create Page'
+  route_name: events.admin.list
+  weight: 10
+  parent: system.admin
+  menu_name: main
+events.config:
+  title: 'Events Configuration'
+  description: 'Configure Events'
+  route_name: events.config
+  weight: 10
+  parent: system.admin_config_content
+  menu_name: main

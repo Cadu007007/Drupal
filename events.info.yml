@@ -1,0 +1,7 @@
+name: Events
+description: Display and Create Events 
+type: module
+core_version_requirement: ^9.0
+package: Events
+version: 1.0
+configure: events.admin_settings

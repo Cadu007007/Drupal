@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Ban module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function events_schema(){
+    $schema['events']=[
+        'description'=>'store title, image, memo , start, end date, and category of event',
+        'fields'=>[
+            'id'=>[
+                'description'=>'the primary key identifier',
+                'type'=>'serial',
+                'unsigned'=>TRUE,
+                'not null'=>TRUE,
+            ],
+            'title'=>[
+                'description'=>'the event title',
+                'type'=>'varchar',
+                'length'=>64,
+                'not null'=>TRUE,
+            ],
+            'image'=>[
+                'description'=>'the event image path',
+                'type'=>'text',
+                'not null'=>TRUE,
+                'default'=>'',
+            ],
+            'category'=>[
+                'description'=>'the event category',
+                'type'=>'varchar',
+                'length'=>64,
+                'not null'=>TRUE,
+                'default'=>'',
+            ],
+            'memo'=>[
+                'description'=>'the event memo',
+                'type' => 'text', 
+                'not null'=>TRUE,
+            ],
+            'start_date'=>[
+                'type'=>'text',
+                'not null'=>TRUE,
+                'description'=>'the start date for the event',
+            ],
+            'end_date'=>[
+                'type'=>'text',
+                'not null'=>TRUE,
+                'description'=>'the end date for the event',
+            ],
+        ],
+        'primary key'=>['id'],
+        'indexes'=> [
+            'title'=> ['title'],
+        ],
+    ];
+    return $schema;
+}

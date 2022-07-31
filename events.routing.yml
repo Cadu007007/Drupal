@@ -1,0 +1,49 @@
+events.config:
+  path: 'admin/config/events'
+  defaults:
+    _form: 'Drupal\events\Form\EventConfig'
+    _title: 'Event Config'
+  requirements:
+    _permission: 'administer'
+events.form.create:
+  path: 'admin/events/create'
+  defaults:
+    _form: '\Drupal\events\Form\EventCreateForm'
+    _title: 'Create New Event'
+  requirements:
+    _permission: 'administer'
+events.form.edit:
+  path: 'admin/events/edit/{event}'
+  defaults:
+    _form: '\Drupal\events\Form\EventEditForm'
+    _title: 'Edit Event'
+  requirements:
+    _permission: 'administer'
+events.form.delete:
+  path: 'admin/events/delete/{cid}'
+  defaults:
+    _form: '\Drupal\events\Form\EventDeleteForm'
+    _title: 'Delete Event'
+  requirements:
+    _permission: 'administer'
+events.list:
+  path: '/events'
+  defaults:
+    _controller: '\Drupal\events\Controller\EventController::index'
+    _title: 'All Events'
+  requirements:
+    _permission: 'access content'
+events.view:
+  path: '/events/show/{id}'
+  defaults:
+    _controller: '\Drupal\events\Controller\EventController::view'
+    _title: 'Show Event'
+  requirements:
+    _permission: 'access content'
+events.admin.list:
+  path: '/admin/events'
+  defaults:
+    _controller: '\Drupal\events\Controller\EventController::adminIndex'
+    _title: 'All Events'
+  requirements:
+    _permission: 'administer'
